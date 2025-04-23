@@ -1,0 +1,262 @@
+/* src/styles/HomePage.css */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+.home-header h1 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.home-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--text-light);
+}
+
+.topics-section,
+.chat-section {
+  background-color: var(--card-color);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.topics-section h2,
+.chat-section h2 {
+  margin-bottom: 10px;
+  color: var(--primary-dark);
+}
+
+.topics-section p,
+.chat-section p {
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-page {
+    gap: 30px;
+  }
+  
+  .home-header {
+    padding: 15px 0;
+  }
+  
+  .topics-section,
+  .chat-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page {
+    gap: 20px;
+  }
+  
+  .home-header {
+    padding: 10px 0;
+  }
+  
+  .topics-section,
+  .chat-section {
+    padding: 15px;
+  }
+}
+
+/* src/styles/TopicGrid.css */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.loading,
+.error-message,
+.no-topics {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .topic-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topic-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* src/styles/TopicTile.css */
+.topic-tile {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.topic-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.topic-image {
+  height: 140px;
+  overflow: hidden;
+}
+
+.topic-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-image {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.placeholder-image span {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.topic-content {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-title {
+  margin-bottom: 10px;
+  color: var(--primary-dark);
+}
+
+.topic-description {
+  color: var(--text-light);
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.topic-updates {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 4px;
+}
+
+.topic-updates h4 {
+  color: var(--primary-dark);
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.topic-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.topic-location,
+.topic-companies {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+}
+
+.location-icon,
+.company-icon {
+  margin-right: 5px;
+}
+
+.topic-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.tip-count {
+  display: flex;
+  align-items: center;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.tip-icon {
+  margin-right: 5px;
+}
+
+.topic-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.view-topic-btn,
+.submit-tip-btn {
+  flex: 1;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.view-topic-btn {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.view-topic-btn:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+.submit-tip-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.submit-tip-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .topic-content {
+    padding: 12px;
+  }
+  
+  .topic-actions {
+    flex-direction: column;
+  }
+}
